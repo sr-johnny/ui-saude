@@ -7,10 +7,11 @@ export const styles = StyleSheet.create({
     container: {
       flex: 1,
       paddingHorizontal: 34,
-      paddingTop: getStatusBarHeight() + 35,
+      paddingTop: getStatusBarHeight(),
       backgroundColor: theme.colors.dark,
     },
     title: {
+      paddingTop: 35,
       color: theme.colors.text,
       fontSize: 32,
       fontFamily: theme.fonts.regular,

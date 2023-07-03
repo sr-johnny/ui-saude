@@ -11,11 +11,12 @@ type Props = {
 export function Chart({ chartData, ...rest }: Props) {
   
   const data = {
-    labels: ["Jan", "Fev", "Mar", "Abr"],
+    labels: ["Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Jul", "Ago", "Set", "Out", "Nov", "Dez"],
     datasets: [
       {
         data: (chartData),
-        color: (opacity = 1) => `rgba(49, 28, 132, ${opacity})`, // optiona
+        //data: [ 5, 5, 5, 5, 6, 0, 7, 3, 6, 4, 5, 5, 5, 5, 5, 5, 5, 6, 3, 10, 2, 6, 4, 6, 5, 5, 5,],
+        color: (opacity = 1) => `rgba(49, 28, 132, ${opacity})`, 
       }
     ],
   };
@@ -24,10 +25,10 @@ export function Chart({ chartData, ...rest }: Props) {
     color: (opacity = 1) => `rgba(62, 62, 62, ${opacity})`,
     decimalPlaces: 0,
     propsForDots: {
-      r: '6',                           // tamanho dos pontos
-      strokeWidth: '1',                 // largura dos pontos
-      fill:  'rgba(49, 28, 132, 0.4)',  // cor dos pontos
-      stroke: theme.colors.primary,     // cor do contorno
+     //r: '6',                           // tamanho dos pontos
+      //strokeWidth: '1',                 // largura dos pontos
+      //fill:  'rgba(49, 28, 132, 0.4)',  // cor dos pontos
+      //stroke: theme.colors.primary,     // cor do contorno
     }
   };
 
@@ -42,10 +43,12 @@ export function Chart({ chartData, ...rest }: Props) {
         yLabelsOffset={6}
         xLabelsOffset={-7}
         withShadow={false}
-        segments={9}
+        segments={10}
+        fromZero
         yAxisSuffix='x'
         style={{marginEnd: 35}}
-        //withInnerLines={false}
+        withDots={false}
+        withInnerLines={false}
         //withOuterLines={false} 
         transparent
       />
